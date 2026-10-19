@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake Lab — a small, playable Snake</title>
+  <meta name="description" content="A small, playable Snake game with keyboard, swipe, and D-pad controls.">
+  <meta name="theme-color" content="#070a10">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Snake Lab home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">SNAKE LAB</span>
+      </a>
+      <a class="ghost-link" href="https://github.com/yangshangkun2006/snake-lab" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">A small browser game</p>
+      <h1>Eat. Grow.<br>Don't hit the wall.</h1>
+      <p class="lede">A minimal Snake game with keyboard, swipe, and D-pad controls. Built to be played in a browser, not installed.</p>
+    </section>
+
+    <section class="game" aria-label="Snake game">
+      <div class="hud">
+        <div class="stat">
+          <span class="stat-label">Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Best</span>
+          <strong id="best">0</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Speed</span>
+          <strong id="speed">1.0×</strong>
+        </div>
+        <button id="pause" class="button button-ghost" type="button" disabled>Pause</button>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="game" width="640" height="640" tabindex="0" aria-label="Snake game board. Use arrow keys or WASD to move."></canvas>
+        <div id="overlay" class="overlay">
+          <p id="overlay-kicker" class="overlay-kicker">Ready?</p>
+          <h2 id="overlay-title">Press an arrow to start</h2>
+          <p id="overlay-text">Or tap the board on mobile.</p>
+          <button id="start" class="button button-primary" type="button">Start game</button>
+        </div>
+      </div>
+
+      <p class="hint"><span>Arrows / WASD</span> move · <span>Space</span> pause · <span>R</span> restart</p>
+
+      <div class="dpad" aria-label="Touch controls">
+        <button class="dpad-btn up" data-dir="up" type="button" aria-label="Up">↑</button>
+        <button class="dpad-btn left" data-dir="left" type="button" aria-label="Left">←</button>
+        <button class="dpad-btn down" data-dir="down" type="button" aria-label="Down">↓</button>
+        <button class="dpad-btn right" data-dir="right" type="button" aria-label="Right">→</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Built by <a href="https://github.com/yangshangkun2006">yangshangkun2006</a>.</p>
+      <p><a href="https://github.com/yangshangkun2006/snake-lab">Source on GitHub</a></p>
+    </footer>
+  </main>
+
+  <script src="game.js" defer></script>
+</body>
+</html>
